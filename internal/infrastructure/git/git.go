@@ -4,17 +4,15 @@ import (
 	"bytes"
 	"fmt"
 	"os/exec"
-
-	"github.com/anggakrnwn/go-commitgen/internal/domain"
 )
 
-type Service struct{}
+type Client struct{}
 
-func NewGitService() domain.GitRepository {
-	return &Service{}
+func NewClient() *Client {
+	return &Client{}
 }
 
-func (s *Service) GetStagedDiff() (string, error) {
+func (c *Client) DiffCached() (string, error) {
 	cmd := exec.Command("git", "diff", "--cached")
 
 	var out bytes.Buffer
@@ -27,11 +25,6 @@ func (s *Service) GetStagedDiff() (string, error) {
 		return "", fmt.Errorf("failed to execute git diff: %v, stderr: %s", err, stderr.String())
 	}
 
-	diffOutput := out.String()
-	if diffOutput == "" {
-		return "", fmt.Errorf("no staged changes found. please run 'git add' first")
-	}
-
-	return diffOutput, nil
+	return out.String(), nil
 
 }
