@@ -14,6 +14,13 @@ Sebuah alat CLI berbasis Go untuk menghasilkan pesan *Conventional Commits* seca
 - **Standardized**: Menghasilkan pesan commit yang rapi sesuai standar industri (*Conventional Commits*).
 
 ## Demo
+
+### Mode Prod (`gcm`)
+<p align="center">
+  <img src="./assets/demoprod.gif" width="650" alt="Demo penggunaan Go CommitGen">
+</p>
+
+### Mode Dev (`go run`)
 <p align="center">
   <img src="./assets/demo.gif" width="650" alt="Demo penggunaan Go CommitGen">
 </p>
