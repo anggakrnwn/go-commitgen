@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/joho/godotenv v1.5.1
-	google.golang.org/genai v1.65.0
+	google.golang.org/genai v1.71.0
 )
 
 require (
